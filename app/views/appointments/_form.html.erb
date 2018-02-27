@@ -1,0 +1,4 @@
+<%= simple_form_for [@offer, @appointment] do |f| %>
+ <%= f.input :offer_id, as: :hidden, input_html: { value: @offer.id}  %>
+ <%= f.button :submit %>
+<% end %>
