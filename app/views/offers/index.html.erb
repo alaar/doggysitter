@@ -1,24 +1,27 @@
 <!-- <h1>Offers#index</h1>
 <p>Find me in app/views/offers/index.html.erb</p> -->
 
-<h1 class = "sitter" style="text-align:center;"> Sitter Service</h1>
+<h1 class = "sitter" style="text-align:center;"> Current Offer</h1>
 <div class="container">
   <div class="row ">
     <% @offers.each do |offer| %>
     <div class="card-container col-xs-12 col-sm-6 col-md-4">
-      <% image_url_path = image_path "alvin-balemesa-105751-unsplash.jpg" %>
+      <% image_url_path = image_path "#{rand(1..15)}.jpg" %>
       <div class = "card" style="background-image: url('<%= image_url_path %>');">
         <!-- use offer.photo? -->
-      <!--   <%= link_to offer.location, offer %> -->
-      <!-- ui-component in wagon -->
-      <!-- http://lewagon.github.io/ui-components/#cards -->
-       <div class="card-category">Popular</div>
+        <!--   <%= link_to offer.location, offer %> -->
+        <!-- ui-component in wagon -->
+        <!-- http://lewagon.github.io/ui-components/#cards -->
+        <div class="card-category">Hello there...</div>
+        <div class="city"><%= offer.location %></div>
+        <div class="ico"><i class="fa fa-heart"></i></div>
       </div>
     </div>
     <% end %>
   </div>
-  <div class="btn btn-primary cas"> <%= link_to "Create a Service", offers_path %> </div>
+  <div class="btn btn-primary cas"> <%= link_to "Create an Offer", offers_path %> </div>
 </div>
 
 
 <!-- cl_image_path(offer.photo)  -->
+
