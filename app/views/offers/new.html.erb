@@ -1,0 +1,12 @@
+<%= form_for(@offer) do |f| %>
+  <%= f.label :price %>
+  <%= f.text_field :price%>
+  <br>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <br>
+  <%= f.label :date_and_time %>
+  <%= f.text_field :date_time %>
+  <br>
+  <%= f.submit "Create an offer", class: "btn btn-primary" %>
+<% end %>
