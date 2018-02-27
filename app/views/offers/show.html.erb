@@ -4,7 +4,8 @@
   <h2> Date: <%= @offer.date_time %> </h2>
   <h2> Location: <%= @offer.location %> </h2>
   <h2> Price: <%= @offer.price %> </h2>
-  <h3><%= link_to 'Submit Request', 'pages_profile_path' %></h3>
 
+
+   <%= render partial: 'appointments/form' %>
 
 

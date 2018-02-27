@@ -11,6 +11,7 @@ class OffersController < ApplicationController
 
   def show
     @offer = Offer.find(params[:id])
+    @appointment = Appointment.new
   end
 
   def create
