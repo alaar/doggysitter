@@ -1,11 +1,24 @@
 
 <img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-07/17/20/enhanced/webdr03/enhanced-mid-27456-1437180148-1.jpg?downsize=715:*&output-format=auto&output-quality=auto" alt="dogwalker">
 
-  <h2> Date: <%= @offer.date_time %> </h2>
-  <h2> Location: <%= @offer.location %> </h2>
-  <h2> Price: <%= @offer.price %> </h2>
+<h2> Date: <%= @offer.date_time %> </h2>
+<h2> Location: <%= @offer.location %> </h2>
+<h2> Price: <%= @offer.price %> </h2>
 
+<%= render partial: 'appointments/form' %>
 
-   <%= render partial: 'appointments/form' %>
+<% if policy(Offer).update? %>
+  <%= new_offer_path %>
+<% end %>
+
+<% @offers.each do |offer| %>
+  <% if policy(offer).edit? %>
+    <%= link_to "Update", edit_offer_path(offer) %>
+  <% end %>
+<% end %>
+
+<% if policy(Offer).destroy? %>
+  <%= new_offer_path %>
+<% end %>
 
 
