@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :offers, only: [:index, :show, :create] do
+  resources :offers, only: [:index, :new, :show, :create] do
     resources :appointments, only: [:create, :update]
   end
 
