@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   resources :appointments, only: [:show]
 
   get 'pages/home'
-
   get 'pages/profile'
+  get 'offers/:id', to: 'offers#show'
 
   devise_for :users
   root to: 'pages#home'
