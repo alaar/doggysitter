@@ -1,15 +1,10 @@
 
 <img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-07/17/20/enhanced/webdr03/enhanced-mid-27456-1437180148-1.jpg?downsize=715:*&output-format=auto&output-quality=auto" alt="dogwalker">
 
-<!--needs to be the ruby version -->
+  <h2> Date: <%= @offer.date_time %> </h2>
+  <h2> Location: <%= @offer.location %> </h2>
+  <h2> Price: <%= @offer.price %> </h2>
+  <h3><%= link_to 'Submit Request', 'pages_profile_path' %></h3>
 
-<% if @offers.present? %>
-  <h2> Date: <%= @offers.date_time %> </h2>
-  <h2> Location: <%= @offers.location %> </h2>
-  <h2> Price: <%= @offers.price %> </h2>
-  <button type="button" class="btn btn-primary">Send Request</button>
-<% else %>
-  <h2>No offer at this time</h2>
-<% end %>
 
 
