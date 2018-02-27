@@ -7,16 +7,77 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# Offer.create(name: "Kitty", category: "rat", found_at: Date.today)
-# Animal.create(name: "Valentine", category: "cat", found_at: Date.today)
-# Animal.create(name: "Fantastic", category: "fox", found_at: Date.today)
+# require 'json'
+# require 'open-uri'
+
+Offer.destroy_all
+User.destroy_all
+
+# url = 'http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+# user_serialized = open(url).read
+# cocktails = JSON.parse(user_serialized)
+
+# cocktails['drinks'].each do |cocktail|
+#   Ingredient.create(name: cocktail['strIngredient1'])
+# end
+
+emails = ["wangwang@gmail.com", "wolf@gmail.com", "bark@gmail.com"]
+emails.each do |email|
+  User.create!(email: email, password: "123456")
+end
+
+users_array = User.all
 
 
-#   create_table "offers", force: :cascade do |t|
-#     t.bigint "user_id"
-#     t.integer "price"
-#     t.string "location"
-#     t.string "date_time"
-#     t.datetime "created_at", null: false
-#     t.datetime "updated_at", null: false
-#     t.index ["user_id"], name: "index_offers_on_user_id"
+offers = [
+  {
+    # photo: "images/alvin-balemesa-105751-unsplash.jpg",
+    user: users_array.sample,
+    location: "Montreal",
+    price: 20,
+    date_time: "20180302"
+    },
+  {
+    # photo: "images/autri-taheri-521018-unsplash.jpg",
+    user: users_array.sample,
+    location: "Quebec",
+    price: 15,
+    date_time: "20180303"
+    },
+  {
+    # photo: "images/isi-akahome-315125-unsplash.jpg",
+    user: users_array.sample,
+    location: "Laval",
+    price: 30,
+    date_time: "20180301"
+
+    },
+  {
+    # photo: "images/jordan-koons-396362-unsplash.jpg",
+    user: users_array.sample,
+    location: "Montreal",
+    price: 25,
+    date_time: "20180309"
+    },
+  {
+    # photo: "images/kevin-quezada-558350-unsplash.jpg",
+    user: users_array.sample,
+    location: "Montreal",
+    price: 15,
+    date_time: "20180310"
+    },
+  {
+    # photo: "images/marvin-meyer-188676-unsplash.jpg",
+    user: users_array.sample,
+    location: "Montreal",
+    price: 18,
+    date_time: "20180303"
+
+    }
+]
+
+offers.each do |offer|
+  Offer.create!(offer)
+end
+
+
