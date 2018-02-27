@@ -2,39 +2,40 @@
 
   <h1> Welcome <%= @user.email %></h1>
 
-
-  <% if ! @user.offers.empty? %>
-    <h2> My Offers </h2>
-    <ul>
-      <% @user.offers.each do |offer| %>
-        <li>
-          <%= offer.date_time%> || <%= offer.location%> || <%= offer.price%>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
-
-  <% if ! @user.appointments.empty? %>
-    <h2> My Appointments </h2>
-    <ul>
-      <% @user.appointments.each do |appointment| %>
-        <li>
-          <%= appointment.status %> || <%= appointment.offer.location%> || <%= appointment.offer.date_time %>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
-
-
   <div class="tabs">
-    <a class="tab active" href="#">
+    <a data-type="offers" class="tab active" href="#">
       <h3>My offers</h3>
     </a>
-    <a class="tab" href="#">
+    <a data-type="appointments" class="tab" href="#">
       <h3> My Appointment</h3>
     </a>
   </div>
 
+  <div class="content" id="offers">
+    <h3>Test Offer</h3>
+    <% if ! @user.offers.empty? %>
+      <ul>
+        <% @user.offers.each do |offer| %>
+          <li>
+            <%= offer.date_time%> || <%= offer.location%> || <%= offer.price%>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
+  <div class="content" id="appointments" style="display: none;">
+    <h3>Test Appointments</h3>
+    <% if ! @user.appointments.empty? %>
+      <ul>
+        <% @user.appointments.each do |appointment| %>
+          <li>
+            <%= appointment.status %> || <%= appointment.offer.location%> || <%= appointment.offer.date_time %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
 
   <br>
 </div>
