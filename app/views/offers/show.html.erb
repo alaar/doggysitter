@@ -3,13 +3,11 @@
 
 <!--needs to be the ruby version -->
 
-<% if @offers.present? %>
-  <h2> Date: <%= @offers.date_time %> </h2>
-  <h2> Location: <%= @offers.location %> </h2>
-  <h2> Price: <%= @offers.price %> </h2>
-  <button type="button" class="btn btn-primary">Send Request</button>
-<% else %>
-  <h2>No offer at this time</h2>
-<% end %>
+
+  <h2> Date: <%= @offer.date_time %> </h2>
+  <h2> Location: <%= @offer.location %> </h2>
+  <h2> Price: <%= @offer.price %> </h2>
+  <h3><%= link_to 'Submit Request', 'pages_profile_path' %></h3>
+
 
 
