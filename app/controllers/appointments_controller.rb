@@ -23,4 +23,7 @@ private
   def appointment_params
     params.require(:appointment).permit(:offer_id, :status)
   end
+
+  def update
+  end
 end
