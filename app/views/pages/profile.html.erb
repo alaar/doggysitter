@@ -1,2 +1,39 @@
-<h1>Pages#profile</h1>
-<p>Find me in app/views/pages/profile.html.erb</p>
+<h1> Welcome <%= @user.email %></h1>
+
+
+<% if ! @user.offers.empty? %>
+  <h2> My Offers </h2>
+  <ul>
+    <% @user.offers.each do |offer| %>
+      <li>
+        <%= offer.date_time%> || <%= offer.location%> || <%= offer.price%>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if ! @user.appointments.empty? %>
+  <h2> My Appointments </h2>
+  <ul>
+    <% @user.appointments.each do |appointment| %>
+      <li>
+        <%= appointment.status %> || <%= appointment.offer.location%> || <%= appointment.offer.date_time %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<div class="tabs">
+  <a class="tab active" href="#">
+    <h3>My offers</h3>
+  </a>
+  <a class="tab" href="#">
+    <h3> My Appointment</h3>
+  </a>
+</div>
+
+
+<br>
+
+
