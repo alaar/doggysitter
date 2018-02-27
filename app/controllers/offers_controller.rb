@@ -1,4 +1,6 @@
 class OffersController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
   def index
     @offers = Offer.all
   end
@@ -13,8 +15,8 @@ class OffersController < ApplicationController
 
   def create
     @offer = Offer.new(offer_params)
-    @offer.user = Offer.find(params[:user_id])
-    @offer.save
+    @offer.user = current_user
+    @offer.save!
   end
 
   private
