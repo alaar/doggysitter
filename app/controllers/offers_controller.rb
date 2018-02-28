@@ -12,39 +12,31 @@ class OffersController < ApplicationController
   end
 
   def show
-    authorize @offer
 
   end
 
   def create
-    # authorize @offer
-
     @offer = Offer.new(offer_params)
     @offer.user = current_user
     authorize @offer
 
     if @offer.save
-      # render :show, status: :created
       redirect_to offer_path(@offer)
-    # else
-    #   render :new
-    #   render_error
     end
   end
 
   def destroy
-    # @offer = Offer.find(params[:id])
-    @offer.destroy
+    @offer.destroy!
+    redirect_to offers_path
   end
 
   def edit
-    # @offer = Offer.find(params[:id])
+    # @offer.edit(offer_params)
+    # redirect_to offer_path(@offer)
   end
 
   def update
-    # @offer = Offer.find(params[:id])
     @offer.update(offer_params)
-
     redirect_to offer_path(@offer)
   end
 
@@ -56,5 +48,6 @@ class OffersController < ApplicationController
 
   def set_offer
     @offer = Offer.find(params[:id])
+    authorize @offer
   end
 end

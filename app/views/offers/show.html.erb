@@ -6,6 +6,12 @@
 <h2> Price: <%= @offer.price %> </h2>
 
 
+<% if @offer.user == current_user %>
+  <%= link_to "Destroy this Offer", offer_path(@offer), method: :delete %>
+  <br>
+  <%= link_to "Edit this Offer", edit_offer_path(@offer) %>
+  <br>
+<% end %>
 <%= link_to "Back to Offers", offers_path %>
 
 
