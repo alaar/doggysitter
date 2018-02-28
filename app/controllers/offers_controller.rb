@@ -8,22 +8,26 @@ class OffersController < ApplicationController
 
   def new
     @offer = Offer.new
+    authorize @offer
   end
 
   def show
-    # @offer = Offer.find(params[:id])
-    @appointment = Appointment.new
+    authorize @offer
   end
 
   def create
     # authorize @offer
+
     @offer = Offer.new(offer_params)
     @offer.user = current_user
+    authorize @offer
 
     if @offer.save
+      # render :show, status: :created
       redirect_to offer_path(@offer)
-    else
-      render :new
+    # else
+    #   render :new
+    #   render_error
     end
   end
 
