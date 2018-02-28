@@ -27,8 +27,13 @@ class OffersController < ApplicationController
   end
 
   def destroy
-    @offer.destroy!
-    redirect_to offers_path
+    if @offer.appointments.empty?
+      @offer.destroy!
+      redirect_to offers_path
+    else
+      flash[:alert] = "You cannot delete offers that have appointments."
+      redirect_to offer_path(@offer)
+    end
   end
 
   def edit
