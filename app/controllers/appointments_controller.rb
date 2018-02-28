@@ -1,29 +1,18 @@
 class AppointmentsController < ApplicationController
+  before_action :authenticate_user!
+
   def show
+    @appointment = Appointment.find(params[:id])
   end
 
-  # def new
-  #   @appointment = Appointment.new
-  #   @offer = Offer.find(params[:id])
-  # end
-
   def create
-    @appointment = Appointment.new(appointment_params)
+    @appointment = Appointment.new(offer_id: params[:offer_id])
     @appointment.user = current_user
     if @appointment.save!
       redirect_to pages_profile_path
     else
-      render :new
+      render "offers/show"
     end
-
   end
 
-private
-
-  def appointment_params
-    params.require(:appointment).permit(:offer_id, :status)
-  end
-
-  def update
-  end
 end
