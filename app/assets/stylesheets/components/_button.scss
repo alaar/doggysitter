@@ -1,0 +1,49 @@
+// button for the offer-index page
+.cas {
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    margin: 35px auto;
+    display: block;
+    border-radius: 15px;
+}
+.cas a {
+  // display:flex;
+  // justify-content: center;
+  color: white;
+  font-weight: bold;
+  margin:15px;
+
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.banner-content {
+  position: relative;
+}
+.sn,{
+    position:absolute;
+    top:150px;
+    right:220px;
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    margin: 35px auto;
+    display: block;
+    border-radius: 15px;
+}
+
+.sn a {
+  // display:flex;
+  // justify-content: center;
+  color: white;
+  font-weight: bold;
+  margin:15px;
+
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}

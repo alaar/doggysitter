@@ -1,0 +1,23 @@
+.banner {
+  background-size: cover;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  height: calc(100vh - 120px) ;
+}
+
+.banner-content {
+  color: white;
+}
+
+.banner-content p {
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.sn a {
+  color: white;
+  font-size: 16px;
+}
