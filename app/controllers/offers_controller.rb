@@ -13,6 +13,7 @@ class OffersController < ApplicationController
 
   def show
     authorize @offer
+
   end
 
   def create
