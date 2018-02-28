@@ -6,7 +6,7 @@
   <div class="row ">
     <% @offers.each do |offer| %>
     <div class="card-container col-xs-12 col-sm-6 col-md-4">
-      <% image_url_path = image_path "#{rand(1..15)}.jpg" %>
+      <% image_url_path = image_path "#{rand(1..14)}.jpg" %>
       <div class = "card" style="background-image: url('<%= image_url_path %>');">
         <!-- use offer.photo? -->
         <!--   <%= link_to offer.location, offer %> -->
