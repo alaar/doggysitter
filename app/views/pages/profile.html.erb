@@ -1,7 +1,7 @@
 <div id="profile-body">
 
-  <h1> Welcome <%= @user.email %></h1>
-
+  <h2> Welcome <%= @user.email %></h2>
+  <br>
   <div class="tabs">
     <a data-type="offers" class="tab active" href="#">
       <h3>My offers</h3>
@@ -19,6 +19,9 @@
           <li>
             <%= offer.date_time%> || <%= offer.location%> || <%= offer.price%>
           </li>
+          <% offer.appointments.each do |appointment| %>
+            <h2>You have a <%= appointment.status %> request from <%= appointment.user%></h2>
+          <% end %>
         <% end %>
       </ul>
     <% end %>
