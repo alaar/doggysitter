@@ -17,11 +17,15 @@
       <ul>
         <% @user.offers.each do |offer| %>
           <li>
-            <%= offer.date_time%> || <%= offer.location%> || <%= offer.price%>
+            <%= link_to offer_path(offer) do %>
+              <%= offer.date_time%> || <%= offer.location%> || <%= offer.price %>
+            <% end %>
+            <% offer.appointments.each do |appointment| %>
+              <h5>
+                You have a <%= appointment.status %> request from <%= appointment.user.email %>
+              </h5>
+            <% end %>
           </li>
-          <% offer.appointments.each do |appointment| %>
-            <h2>You have a <%= appointment.status %> request from <%= appointment.user%></h2>
-          <% end %>
         <% end %>
       </ul>
     <% end %>
