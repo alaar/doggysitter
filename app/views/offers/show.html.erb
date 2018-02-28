@@ -5,20 +5,8 @@
 <h2> Location: <%= @offer.location %> </h2>
 <h2> Price: <%= @offer.price %> </h2>
 
-<%= render partial: 'appointments/form' %>
 
-<% if policy(Offer).update? %>
-  <%= new_offer_path %>
-<% end %>
 
-<% @offers.each do |offer| %>
-  <% if policy(offer).edit? %>
-    <%= link_to "Update", edit_offer_path(offer) %>
-  <% end %>
-<% end %>
 
-<% if policy(Offer).destroy? %>
-  <%= new_offer_path %>
-<% end %>
 
 
