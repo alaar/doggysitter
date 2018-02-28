@@ -1,3 +1,12 @@
+<%= if @offer.error.any? %>
+<h2>The following errers prevented the article from getting created</h2>
+<ul>
+  <% @article.errors.full_mesages.each do |msg| %>
+    <li><%= msg %></li>
+    <%= end %>
+</ul>
+<% end %>
+
 <%= form_for(@offer) do |f| %>
   <%= f.label :price %>
   <%= f.text_field :price%>
