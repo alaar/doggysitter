@@ -6,6 +6,13 @@
 <h2> Price: <%= @offer.price %> </h2>
 
 
+<% if @offer.user != current_user %>
+  <%= simple_form_for [@offer, @appointment] do |f| %>
+    <%= f.submit "Send a request", class: "btn btn-primary"%>
+  <% end %>
+<% end %>
+
+<br>
 <%= link_to "Back to Offers", offers_path %>
 
 

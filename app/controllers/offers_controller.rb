@@ -13,7 +13,7 @@ class OffersController < ApplicationController
 
   def show
     authorize @offer
-
+    @appointment = Appointment.new()
   end
 
   def create
