@@ -12,7 +12,8 @@ class OffersController < ApplicationController
   end
 
   def show
-
+    authorize @offer
+    @appointment = Appointment.new()
   end
 
   def create

@@ -1,10 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-07/17/20/enhanced/webdr03/enhanced-mid-27456-1437180148-1.jpg?downsize=715:*&output-format=auto&output-quality=auto" class="img-rounded img-responsive" alt="dogwalker">
 
-<img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-07/17/20/enhanced/webdr03/enhanced-mid-27456-1437180148-1.jpg?downsize=715:*&output-format=auto&output-quality=auto" alt="dogwalker">
+      <h2> Date: <%= @offer.date_time %> </h2>
+      <h2> Location: <%= @offer.location %> </h2>
+      <h2> Price: <%= @offer.price %> </h2>
 
-<h2> Date: <%= @offer.date_time %> </h2>
-<h2> Location: <%= @offer.location %> </h2>
-<h2> Price: <%= @offer.price %> </h2>
 
+      <% if @offer.user != current_user %>
+        <%= simple_form_for [@offer, @appointment] do |f| %>
+          <%= f.submit "Send a request", class: "btn btn-primary"%>
+        <% end %>
+      <% end %>
+      
+    </div>
+  </div>
+</div>
 
 <% if @offer.user == current_user %>
   <%= link_to "Destroy this Offer", offer_path(@offer), method: :delete %>
@@ -13,6 +25,7 @@
   <br>
 <% end %>
 <%= link_to "Back to Offers", offers_path %>
+
 
 
 

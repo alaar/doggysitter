@@ -5,9 +5,9 @@
     <div>
       <h1>WELCOME to Doggy Sitter</h1>
       <p>Find a nice dog sitter around your neighborhood.</p>
-      <button class="btn btn-primary sn">
-        <%= link_to "Start Now", offers_path %>
-      </button>
+      <%= link_to offers_path do %>
+        <button class="btn btn-primary sn">Start Now</button>
+      <% end %>
     </div>
   </div>
 </div>
