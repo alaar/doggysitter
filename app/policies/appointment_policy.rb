@@ -9,4 +9,12 @@ class AppointmentPolicy < ApplicationPolicy
     true
   end
 
+  def show?
+    record.user == user || record.offer.user == user
+  end
+
+  def update?
+    record.offer.user == user
+  end
+
 end
