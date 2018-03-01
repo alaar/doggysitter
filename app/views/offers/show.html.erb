@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <%= cl_image_tag @offer.photo, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag(@offer.photo, height: 300, width: 400, crop: :fill) rescue nil%>
 
       <h2> Date: <%= @offer.date_time %> </h2>
       <h2> Location: <%= @offer.location %> </h2>
