@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
   resources :offers do
-    resources :appointments, only: [:create, :update]
+    resources :appointments, only: [:create]
   end
 
-  resources :appointments, only: [:show]
+  resources :appointments, only: [:show, :update]
 
   get 'pages/profile'
 

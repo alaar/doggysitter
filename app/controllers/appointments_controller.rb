@@ -3,6 +3,8 @@ class AppointmentsController < ApplicationController
 
   def show
     @appointment = Appointment.find(params[:id])
+    @offer = @appointment.offer
+    authorize @appointment
   end
 
   def create
@@ -14,6 +16,18 @@ class AppointmentsController < ApplicationController
     else
       render "offers/show"
     end
+  end
+
+  def update
+    @appointment = Appointment.find(params[:id])
+    if params[:commit] == "approve"
+      @appointment.status = "accepted"
+    elsif params[:commit] == "decline"
+      @appointment.status = "rejected"
+    end
+    authorize @appointment
+    @appointment.save
+    redirect_to appointment_path(@appointment)
   end
 
 end

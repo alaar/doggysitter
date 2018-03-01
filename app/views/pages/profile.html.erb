@@ -22,7 +22,10 @@
             <% end %>
             <% offer.appointments.each do |appointment| %>
               <h5>
-                You have a <%= appointment.status %> request from <%= appointment.user.email %>
+                You have a <%= link_to appointment_path(appointment) do %>
+                  <%= appointment.status %>
+                <% end %>
+                request from <%= appointment.user.email %>
               </h5>
             <% end %>
           </li>
