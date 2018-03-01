@@ -5,20 +5,22 @@
 <div class="container">
   <div class="row ">
     <% @offers.each do |offer| %>
-    <div class="card-container col-xs-12 col-sm-6 col-md-4">
-      <% image_url_path = image_path "#{rand(1..14)}.jpg" %>
-      <div class = "card" style="background-image: url('<%= image_url_path %>');">
-        <!-- use offer.photo? -->
-        <!--   <%= link_to offer.location, offer %> -->
-        <!-- ui-component in wagon -->
-        <!-- http://lewagon.github.io/ui-components/#cards -->
+      <div class="card-container col-xs-12 col-sm-6 col-md-4">
+        <%= link_to offer_path(offer) do %>
+          <% image_url_path = image_path "#{rand(1..14)}.jpg" %>
+          <div class = "card" style="background-image: url('<%= image_url_path %>');">
+            <!-- use offer.photo? -->
+            <!--   <%= link_to offer.location, offer %> -->
+            <!-- ui-component in wagon -->
+            <!-- http://lewagon.github.io/ui-components/#cards -->
 
-        <div class="card-category"><%= link_to "Hello there...", offer_path(offer) %></div>
-        <div class="city"><%= offer.location %></div>
-        <div class="ico"><i class="fa fa-heart"></i></div>
-        <div class="price"> $<%= offer.price %> </div>
+            <div class="card-category"><%# link_to "Hello there...", offer_path(offer) %></div>
+            <div class="city"><%= offer.location %></div>
+            <div class="ico"><i class="fa fa-heart"></i></div>
+            <div class="price"> $<%= offer.price %> </div>
+          </div>
+        <% end %>
       </div>
-    </div>
     <% end %>
   </div>
   <div class="btn btn-primary cas"> <%= link_to "Create an Offer", new_offer_path %> </div>
