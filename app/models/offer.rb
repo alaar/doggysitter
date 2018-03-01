@@ -5,6 +5,8 @@ class Offer < ApplicationRecord
   belongs_to :user
   has_many :appointments
 
+  mount_uploader :photo, PhotoUploader
+
   validates :location, presence: true
   validates :date_time, presence: true
   validates :price, presence: true

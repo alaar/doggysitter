@@ -24,7 +24,7 @@
       <div class="card-container col-xs-12 col-sm-6 col-md-4">
         <%= link_to offer_path(offer) do %>
           <% image_url_path = image_path "#{rand(1..14)}.jpg" %>
-          <div class = "card" style="background-image: url('<%= image_url_path %>');">
+          <div class = "card" style="background-image: url('<%= cl_image_path(offer.photo) rescue nil %>')">
             <!-- use offer.photo? -->
             <!--   <%= link_to offer.location, offer %> -->
             <!-- ui-component in wagon -->

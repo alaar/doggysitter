@@ -1,3 +1,4 @@
+
 <%= form_for(@offer) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -8,8 +9,11 @@
   <%= f.label :location %>
   <%= f.text_field :location %>
   <br>
-   <%= f.label :price %>
+  <%= f.label :price %>
   <%= f.text_field :price%>
+  <br>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
   <br>
   <%= f.submit "Create an offer", class: "btn btn-primary" %>
 <% end %>
