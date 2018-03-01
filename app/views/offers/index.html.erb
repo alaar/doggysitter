@@ -3,7 +3,23 @@
 
 <h1 class = "sitter" style="text-align:center;">Current Offers</h1>
 <div class="container">
+
+  <!-- <div id="flat_address">
+      <input id="autocomplete" placeholder="Enter your address"
+             onFocus="geolocate()" type="text"></input>
+  </div> -->
+
+  <div
+    id="map"
+    style="width: 100%;
+    height: 200px;"
+    data-markers="<%= @markers.to_json %>"
+  ></div>
+
+
+
   <div class="row ">
+
     <% @offers.each do |offer| %>
       <div class="card-container col-xs-12 col-sm-6 col-md-4">
         <%= link_to offer_path(offer) do %>
