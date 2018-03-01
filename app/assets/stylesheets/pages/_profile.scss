@@ -1,5 +1,8 @@
+.wel {
+  color: grey;
+}
 .tabs {
-  background: #53443F;
+  background: LightBlue;
   display: flex;
   padding: 10px 10px 0 10px
 }
@@ -21,7 +24,7 @@
   margin-bottom: 0;
 }
 .tab {
-  background: #756A66;
+  background: grey;
   flex: 0 0 25%;
   text-align: center;
   padding: 20px 0;
@@ -35,4 +38,30 @@
 .tab.active {
   background: white;
   color: black;
+}
+
+.content {
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  margin-left: 65px;
+  margin-top: 30px;
+}
+
+.sc {
+  width: 150px;
+}
+
+.lag {
+  width: 500px;
+}
+
+table {
+margin-left: 50px;
+}
+
+
+table, th, td {
+ border: 3px solid grey;
+ padding:8px
 }
