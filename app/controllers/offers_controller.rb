@@ -4,7 +4,7 @@ class OffersController < ApplicationController
 
   def index
     @offers = policy_scope(Offer).order(created_at: :desc)
-    @offers = Offer.where.not(latitude: nil, longitude: nil)
+    # @offers = Offer.where.not(latitude: nil, longitude: nil)
     # @offers = policy_scope(Offer).near(params[:location], 100)
 
     @markers = @offers.map do |offer|
@@ -58,7 +58,7 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit(:price, :location, :date_time)
+    params.require(:offer).permit(:price, :location, :date_time, :photo)
   end
 
   def set_offer
