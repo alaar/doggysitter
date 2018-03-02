@@ -31,9 +31,13 @@
             <!-- ui-component in wagon -->
             <!-- http://lewagon.github.io/ui-components/#cards -->
             <div class="card-content">
-              <div class="city"><%= offer.location.split(",")[0] %></div>
-              <div class="ico"><i class="fa fa-heart"></i></div>
-              <div class="price"> $<%= offer.price %>/per hour<br><%= offer.date_time %></div>
+              <div class="name-offer">
+                <h2> <%= offer.name %></h2>
+             </div>
+              <div class="card-description city ico price">
+                <h2><%= offer.location.split(",")[0] %></h2>
+                <p>$<%= offer.price %>/per hour<br><%= offer.date_time %></p>
+              </div>
             </div>
           </div>
         <% end %>
