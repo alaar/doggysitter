@@ -4,7 +4,7 @@
   <br>
   <div class="tabs">
     <a data-type="offers" class="tab active" href="#">
-      <h3>My offers</h3>
+      <h3 class = "middle-t">My offers</h3>
     </a>
     <a data-type="appointments" class="tab" href="#">
       <h3> My Appointment</h3>
@@ -36,8 +36,8 @@
     <% end %>
     <% end %>
 <!-- delete-end -->
-
-    <h3>Requested Appointments for my Offers</h3>
+    <br>
+    <h3 class = "text-center">Requested Appointments for my Offers</h3>
     <table>
       <thead>
         <tr>
@@ -60,7 +60,7 @@
     <br>
     <br>
 
-    <h3>Offers</h3>
+    <h3 class = "text-center">Offers</h3>
     <table>
       <% if ! @user.offers.empty? %>
         <thead>
@@ -89,7 +89,8 @@
   </div>
 
   <div class="content" id="appointments" style="display: none;">
-    <h3>Appointments</h3>
+    <br>
+    <h3 class = "text-center">Appointments</h3>
 
     <!-- delete-start -->
     <% if false %>
@@ -120,7 +121,7 @@
           <% @user.appointments.each do |appointment| %>
           <tbody>
             <tr>
-              <td><%= appointment.status %></td>
+              <td><%= appointment.status.capitalize %></td>
               <td><%= appointment.offer.location%></td>
               <td><%= appointment.offer.date_time %></td>
             </tr>
