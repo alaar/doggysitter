@@ -30,7 +30,7 @@ class OffersController < ApplicationController
     @offer.user = current_user
     authorize @offer
 
-    if @offer.save
+    if @offer.save!
       redirect_to offer_path(@offer)
     end
   end

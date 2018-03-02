@@ -5,6 +5,7 @@
   padding: 30px;
   margin: 15px 5px;
   border-radius: 8px;
+  box-shadow: 3px 5px 10px grey;
   // text-align: center;
   // display: flex;
   // flex-direction: column;
@@ -38,25 +39,19 @@
   }
 }
 
+
 .city {
   position:absolute;
-  bottom: 20px;
+  bottom: 10px;
   right: 50px;
   color: white;
   font-weight:bold;
   font-size: 25px;
 }
 
-.card-category {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-weight: bold;
-}
-
 .ico {
   position: absolute;
-  bottom: 22px;
+  bottom: 12px;
   color:red;
   right:20px;
   font-size: 20px;
@@ -64,13 +59,13 @@
 
 .price {
   position:absolute;
-  bottom:22px;
+  bottom:12px;
   color:white;
   font-weight:bold;
-  font-size: 22px;
-  left: 20px;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
+  font-size: 18px;
+  left: 10px;
+  // background-color: rgba(0, 0, 0, 0.1);
+  // border-radius: 15px;
   padding:0 10px;
 }
 
@@ -85,3 +80,8 @@
   justify-content: space-around;
 }
 
+.map {
+  margin-bottom: 30px;
+  box-shadow: 2px 2px 3px 5px LightGrey;
+  border-radius: 3px;
+}
