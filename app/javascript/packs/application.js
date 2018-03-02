@@ -5,4 +5,5 @@ import { autocomplete } from '../components/autocomplete'
 
 initTabs();
 window.geolocate = geolocateFn;
-autocomplete;
+autocomplete();
+

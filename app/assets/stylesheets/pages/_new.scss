@@ -1,7 +1,22 @@
 .wrapper {
-  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 10px;
+  abbr {
+    display: none;
+  }
 }
 
-#image-upload-wrapper {
-  text-align: center;
+.button-custom {
+  margin: 60px 0 0 0;
+  font-size: 10px;
+}
+
+.button-custom a {
+  color: white;
+  text-decoration: none;
+}
+
+.offer-button {
+  margin: 20px 0 0 0;
 }
