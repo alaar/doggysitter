@@ -1,22 +1,41 @@
-
-<%= simple_form_for(@offer) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<div class="wrapper">
   <br>
-  <%= f.label :date_and_time %>
-  <%= f.text_field :date_time %>
+  <%= simple_form_for(@offer) do |f| %>
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name, placeholder: "First name" %>
+    <br>
+    <br>
+    <%= f.label :date_and_time %>
+    <br>
+    <%= f.text_field :date_time, placeholder: "e.g. Fri, Mar 2, 6:00 PM" %>
+    <br>
+    <br>
+    <%= f.label :location %>
+    <br>
+    <%= f.text_field :location %>
+    <br>
+    <br>
+    <%= f.label :price %>
+    <br>
+    <%= f.text_field :price, placeholder: "Hourly rate" %>
+    <br>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <%= f.input :photo %>
+        <br>
+        <%= f.input :photo_cache, as: :hidden %>
+        <br>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+    </div>
+    <%= f.submit "Create an offer", class: "btn btn-primary" %>
+  <% end %>
   <br>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
   <br>
-  <%= f.label :price %>
-  <%= f.text_field :price%>
-  <br>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <br>
-  <%= f.submit "Create an offer", class: "btn btn-primary" %>
-<% end %>
-
-<%= link_to "Back to Offers", offers_path %>
-
+  <%= link_to "Back to Offers", offers_path %>
+</div>
