@@ -1,30 +1,37 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <%= cl_image_tag(@offer.photo, height: 300, width: 400, crop: :fill) rescue nil%>
-
-      <h2> Date: <%= @offer.date_time %> </h2>
-      <h2> Location: <%= @offer.location %> </h2>
-      <h2> Price: <%= @offer.price %> </h2>
 
 
-      <% if @offer.user != current_user %>
-        <%= simple_form_for [@offer, @appointment] do |f| %>
-          <%= f.submit "Send a request", class: "btn btn-primary"%>
+  <div class="container white-page">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <%= cl_image_tag(@offer.photo, height: 300, width: 400, crop: :fill, :id => "show-image") rescue nil %>
+
+        <div class="show-info">
+        <h2> Date: <%= @offer.date_time %> </h2>
+        <h2> Location: <%= @offer.location %> </h2>
+        <h2> Price: $<%= @offer.price %> </h2>
+        </div>
+
+
+        <% if @offer.user != current_user %>
+          <%= simple_form_for [@offer, @appointment] do |f| %>
+            <%= f.submit "Send a request", class: "btn btn-primary"%>
+          <% end %>
         <% end %>
-      <% end %>
 
+      </div>
     </div>
   </div>
+
+ <div id="show-footer">
+  <% if @offer.user == current_user %>
+    <%= link_to "Destroy this Offer", offer_path(@offer), method: :delete, :class => "btn btn-primary" %>
+    <br>
+    <%= link_to "Edit this Offer", edit_offer_path(@offer), :class => "btn btn-primary" %>
+    <br>
+  <% end %>
+  <%= link_to "Back to Offers", offers_path, :class => "btn btn-primary" %>
 </div>
 
-<% if @offer.user == current_user %>
-  <%= link_to "Destroy this Offer", offer_path(@offer), method: :delete %>
-  <br>
-  <%= link_to "Edit this Offer", edit_offer_path(@offer) %>
-  <br>
-<% end %>
-<%= link_to "Back to Offers", offers_path %>
 
 
 
