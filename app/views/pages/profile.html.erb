@@ -1,18 +1,20 @@
 <div id="profile-body">
 
-  <h2> Welcome <%= @user.email %></h2>
+  <h2 class ="wel text-center"> Welcome <%= @user.email %></h2>
   <br>
   <div class="tabs">
     <a data-type="offers" class="tab active" href="#">
-      <h3>My offers</h3>
+      <h3 class = "middle-t">My offers</h3>
     </a>
     <a data-type="appointments" class="tab" href="#">
       <h3> My Appointment</h3>
     </a>
   </div>
 
+<!-- <delete start> -->
   <div class="content" id="offers">
-    <h3>Offers</h3>
+    <!-- <h3>Offers</h3> -->
+    <% if false %>
     <% if ! @user.offers.empty? %>
       <ul>
         <% @user.offers.each do |offer| %>
@@ -32,19 +34,106 @@
         <% end %>
       </ul>
     <% end %>
+    <% end %>
+<!-- delete-end -->
+    <br>
+    <h3 class = "text-center">Requested Appointments for my Offers</h3>
+    <table>
+      <thead>
+        <tr>
+          <th class = "sc">Status</th>
+          <th class = "lag">User Email</th>
+          <th class= "sc">Offer ID</th>
+        </tr>
+      </thead>
+      <% @user.appointments.each do |appointment| %>
+        <tbody>
+          <tr>
+            <td><%= link_to appointment.status.capitalize, appointment_path(appointment)%></td>
+            <td><%= appointment.user.email%></td>
+            <td><%= appointment.offer.id %></td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+
+    <br>
+    <br>
+
+    <h3 class = "text-center">Offers</h3>
+    <table>
+      <% if ! @user.offers.empty? %>
+        <thead>
+          <tr>
+            <th class = "sc">Time</th>
+            <th class = "lag">Location</th>
+            <th class= "sc">Price</th>
+          </tr>
+        </thead>
+        <% @user.offers.each do |offer| %>
+          <tbody>
+            <tr>
+              <td><%= offer.date_time%></td>
+              <td><%= offer.location%></td>
+              <td><%= offer.price %></td>
+            </tr>
+          </tbody>
+
+
+        <% end %>
+      <% end %>
+    </table>
+
+
+
   </div>
 
   <div class="content" id="appointments" style="display: none;">
-    <h3>Appointments</h3>
+    <br>
+    <h3 class = "text-center">Appointments</h3>
+
+    <!-- delete-start -->
+    <% if false %>
     <% if ! @user.appointments.empty? %>
       <ul>
         <% @user.appointments.each do |appointment| %>
           <li>
             <%= appointment.status %> || <%= appointment.offer.location%> || <%= appointment.offer.date_time %>
           </li>
+
+
         <% end %>
       </ul>
     <% end %>
+    <% end %>
+    <!-- delete-end -->
+
+
+      <table>
+        <% if ! @user.appointments.empty? %>
+          <thead>
+            <tr>
+              <th class = "sc">Status</th>
+              <th class = "lag">Location</th>
+              <th class= "sc">Time</th>
+            </tr>
+          </thead>
+          <% @user.appointments.each do |appointment| %>
+          <tbody>
+            <tr>
+              <td><%= appointment.status.capitalize %></td>
+              <td><%= appointment.offer.location%></td>
+              <td><%= appointment.offer.date_time %></td>
+            </tr>
+          </tbody>
+          <% end %>
+        <% end %>
+      </table>
+
+
+
+
+
   </div>
 
   <br>
