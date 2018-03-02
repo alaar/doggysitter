@@ -1,23 +1,29 @@
-<div class="container">
+<div class="appointment-container container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <img src="https://phoenix.dentaldstudio.com/wp-content/uploads/2015/07/appointment-512.png" class="img-rounded img-responsive" alt="appointment" style= "width: 250px;">
 
-      <h4>You have a request from <%= @appointment.user.email %></h4>
-      <h4>For your offer:</h4>
-      <h5> <strong>Date:</strong> <%= @offer.date_time %> </h5>
-      <h5> <strong>Location:</strong> <%= @offer.location %> </h5>
-      <h5> <strong>Price:</strong> <%= @offer.price %> </h5>
-      <h5> <strong>Status:</strong> <%= @appointment.status %> </h5>
+      <h3>You have a request from <%= @appointment.user.email %></h3>
+      <h3>For your offer:</h3>
+      <h4> <strong>Date:</strong> <%= @offer.date_time %> </h4>
+      <h4> <strong>Location:</strong> <%= @offer.location %> </h4>
+      <h4> <strong>Price:</strong> <%= @offer.price %> </h4>
+      <h4> <strong>Status:</strong> <%= @appointment.status %> </h4>
 
       <% if @offer.user == current_user && @appointment.status == "pending" %>
         <%= simple_form_for @appointment do |f| %>
-          <%= f.submit "approve", class: "btn btn-success" %>
-          <%= f.submit "decline", class: "btn btn-danger" %>
+          <%= f.submit "approve", class: "btn btn-success btn-lg" %>
+          <%= f.submit "decline", class: "btn btn-danger btn-lg" %>
         <% end %>
       <% end %>
       <br>
-
+        <%= link_to  offers_path do %>
+          <h4>
+            <i class="fas fa-undo-alt"></i>
+            Back to offers
+          </h4>
+        <% end %>
+      <br>
     </div>
   </div>
 </div>
