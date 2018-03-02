@@ -14,7 +14,7 @@
 
         <% if @offer.user != current_user %>
           <%= simple_form_for [@offer, @appointment] do |f| %>
-            <%= f.submit "Send a request", class: "btn btn-primary"%>
+            <%= f.submit "Send a request", class: "btn btn-primary center-btn"%>
           <% end %>
         <% end %>
 
