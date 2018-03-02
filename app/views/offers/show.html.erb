@@ -6,6 +6,7 @@
         <%= cl_image_tag(@offer.photo, height: 300, width: 400, crop: :fill, :id => "show-image") rescue nil %>
 
         <div class="show-info">
+        <h2> Name: <%= @offer.name %> </h2>
         <h2> Date: <%= @offer.date_time %> </h2>
         <h2> Location: <%= @offer.location %> </h2>
         <h2> Price: $<%= @offer.price %> </h2>
@@ -29,7 +30,12 @@
     <%= link_to "Edit this Offer", edit_offer_path(@offer), :class => "btn btn-primary" %>
     <br>
   <% end %>
-  <%= link_to "Back to Offers", offers_path, :class => "btn btn-primary" %>
+  <%= link_to  offers_path do %>
+    <h5 class="back-to-offers">
+      <i class="fas fa-undo-alt"></i>
+      Back to offers
+    </h5>
+  <% end %>
 </div>
 
 

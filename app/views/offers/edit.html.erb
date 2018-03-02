@@ -1,12 +1,18 @@
-<%= form_for(@offer) do |f| %>
-  <%= f.label :date_and_time %>
-  <%= f.text_field :date_time %>
+<div class="wrapper">
+  <%= simple_form_for(@offer) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :date_time %>
+    <%= f.input :location %>
+    <%= f.input :price%>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.submit "Edit offer", class: "btn btn-primary offer-button" %>
+  <% end %>
   <br>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <br>
-   <%= f.label :price %>
-  <%= f.text_field :price%>
-  <br>
-  <%= f.submit "Edit this offer", class: "btn btn-primary" %>
-<% end %>
+  <%= link_to  offers_path do %>
+    <h5 class="back-to-offers">
+      <i class="fas fa-undo-alt"></i>
+      Back to offers
+    </h5>
+  <% end %>
+</div>
