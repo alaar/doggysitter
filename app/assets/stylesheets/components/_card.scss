@@ -12,6 +12,10 @@
   // justify-content: space-between;
 }
 
+.card:hover {
+  opacity:0.6;
+}
+
 .sitter {
   font-weight: 700;
   color:rgb(89, 157, 209);
@@ -85,3 +89,12 @@
   box-shadow: 2px 2px 3px 5px LightGrey;
   border-radius: 3px;
 }
+
+.name-offer {
+  position: absolute;
+  color: white;
+  text-decoration: none;
+  top: 5px;
+  left: 20px;
+}
+
