@@ -1,9 +1,11 @@
 
 #show-image {
   display: block;
-   margin-left: auto;
-   margin-right: auto;
-   margin-top: 50px;
+   // margin-left: auto;
+   // margin-right: auto;
+   // margin-top: 50px;
+   margin: 50px auto;
+   box-shadow: 1px 1px 2px #B3B3B3;
 }
 
 .links-show-footer {
@@ -22,6 +24,26 @@
   font-family: Raleway, Helvetica, sans-serif;
   font-size: 1.0em;
   text-align: center;
+}
+
+.white-page {
+  background: white;
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px #B3B3B3;
+  margin-top: 50px;
+}
+
+#show-footer {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  margin-top: 25px;
+}
+
+.center-btn {
+  display: flex;
+  margin: 40px auto;
 }
 
 

@@ -46,7 +46,7 @@
           <th class= "sc">Offer ID</th>
         </tr>
       </thead>
-      <% @user.appointments.each do |appointment| %>
+      <% @user.appointments_for_my_offers.each do |appointment| %>
         <tbody>
           <tr>
             <td><%= link_to appointment.status.capitalize, appointment_path(appointment)%></td>
@@ -78,14 +78,17 @@
               <td><%= offer.price %></td>
             </tr>
           </tbody>
-
-
         <% end %>
       <% end %>
     </table>
-
-
-
+    <br>
+      <%= link_to  offers_path do %>
+        <h5 class="back-to-offers">
+          <i class="fas fa-undo-alt"></i>
+          Back to offers
+        </h5>
+      <% end %>
+    <br>
   </div>
 
   <div class="content" id="appointments" style="display: none;">
@@ -121,7 +124,7 @@
           <% @user.appointments.each do |appointment| %>
           <tbody>
             <tr>
-              <td><%= appointment.status.capitalize %></td>
+              <td><%= link_to appointment.status.capitalize, appointment_path(appointment) %></td>
               <td><%= appointment.offer.location%></td>
               <td><%= appointment.offer.date_time %></td>
             </tr>
@@ -129,10 +132,13 @@
           <% end %>
         <% end %>
       </table>
-
-
-
-
+      <br>
+      <%= link_to  offers_path do %>
+        <h5 class="back-to-offers">
+          <i class="fas fa-undo-alt"></i>
+          Back to offers
+        </h5>
+      <% end %>
 
   </div>
 
